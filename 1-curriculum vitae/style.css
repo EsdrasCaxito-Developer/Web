@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Variables */
+:root{
+    --_boxOffset: calc(var(--m-400) * 6);
+
+    --clr-600: #3b3b3b;
+    --clr-550: #4d4949;
+    --clr-500: #cdcdcf;
+    --clr-400: #fff;
+
+    --fs-500: 1.5rem;
+    --fs-400: 1rem;
+    --fs-300: .8rem;
+
+    --left_size: 320px;
+    --left_background: #333a4c;
+    --left_background-2: #404c68;
+    
+    --m-500: 1.5rem;
+    --m-400: .5rem;
+
+    --size: 20px;
+}
+
+/* Reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+p{
+    font-size: var(--fs-300);
+}
+
+/* Utilitaries */
+
+.flex{
+    display: flex;
+}
+
+.grid{
+    display: grid;
+}
+
+.curriculum__title{
+    font-size: var(--fs-500);
+    font-family: "Montserrat Alternates", sans-serif;
+    margin-block-end: calc(var(--m-400) * 2);
+    text-transform: uppercase;
+    color: var(--clr-600)
+}
+/* Main code */
+
+main{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: var(--left_size) 1fr;
+}
+
+.curriculum__left{
+    background: var(--left_background);
+    padding-inline-start: var(--_boxOffset);
+
+    display: grid;
+}
+/*
+.curriculum__left .curriculum__section:has(.curriculum__title){
+    background-color: var(--left_background-2);
+    padding: .5rem 0 0 .5rem;
+} */
+
+.curriculum__title{
+    position: relative;
+}
+
+.curriculum__title::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    background: var(--clr-400);
+}
+
+.curriculum__left .curriculum__title,
+.curriculum__left .curriculum__subtitle{
+    color: var(--clr-400);
+}
+
+.curriculum__subtitle{
+    font-size: var(--fs-400);
+}
+
+.curriculum__left .curriculum__item{
+    color: var(--clr-500);
+}
+
+.curriculum__section.flex{
+    align-items: center;
+}
+
+.curriculum__section:has(img){
+    padding-block-end: 30px;
+}
+
+.curriculum__section img{
+    --size: 150px;
+
+    width: var(--size);
+    height: var(--size);
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.curriculum__left .curriculum__section{
+    width: calc(var(--left_size) - (var(--m-400) * 6));
+}
+
+.curriculum__icon{
+    display: inline-block;
+    justify-self: center;
+
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    background-color: var(--clr-400);
+    padding-block-end: .2rem
+
+;
+
+    color: var(--left_background-2);
+    text-align: center;
+    line-height: var(--size);
+}
+
+.curriculum__list{
+    padding-inline-end: 50px;
+}
+
+.curriculum__list:is(:not(.flex)),
+.curriculum__section.skills .curriculum__list{
+    padding-block-end: 20px;
+}
+
+.curriculum__list.flex{
+    flex-direction: column;
+    gap: 1rem 0;
+}
+.curriculum__section.skills{
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.curriculum__section.skills .curriculum__list.flex{
+    --_distance: .3rem;
+
+    gap: var(--_distance);
+
+    padding-block-start: var(--_distance);
+    text-transform: capitalize;
+}
+
+.curriculum__section.hobbies .curriculum__list.flex{
+    flex-direction: row;
+    gap: 0 1rem;
+}
+
+.curriculum__section.hobbies .curriculum__icon{
+    --size: 30px;
+
+    font-size: var(--fs-400);
+}
+
+.curriculum__item{
+    font-size: var(--fs-300);
+}
+
+.curriculum__right{
+    flex-direction: column;
+    padding: var(--_boxOffset);
+}
+
+.curriculum__right .curriculum__title{
+    margin-block-end: 0;
+}
+
+.curriculum__right .curriculum__section:not(:first-child){
+    padding-block-start: var(--m-500);
+}
+
+.curriculum__section.profile{
+    flex-direction: column;
+    align-items: start;
+}
+
+.curriculum__name{
+    font-size: 2rem;
+}
+
+.curriculum__professional{
+    font-size: var(--fs-300);
+}
+
+.curriculum__description{
+    text-align: justify;
+  
+    padding-block-start: calc(var(--m-500) / 2);
+}
+
+.curriculum__right .curriculum__title::before{
+    background-color: var(--clr-600);   
+}
+
+.curriculum__content{
+    padding-block-start: calc(var(--_boxOffset)/2);
+    gap: 1rem 0;
+}
+
+.subsection__title{
+    font-size: var(--fs-400);
+}
+
+.subsection__time{
+    font-size: var(--fs-300);
+    color: var(--clr-550);
+}
+
+.curriculum__section.experience{
+    position: relative;
+}
+
+.curriculum__section.experience::before{
+    content: "";
+    position: absolute;
+    top: 98px;
+    left: 8px;
+    height: calc(100% - 98px);
+    width: 1px;
+    background: var(--left_background);
+}
+
+.curriculum__subsection{
+    position: relative;
+    padding-inline-start: 3rem;
+}
+
+.curriculum__subsection::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    background: var(--left_background);
+}
+
+.curriculum__subsection::after{
+    --size: 15px;
+
+    content: "";
+    position: absolute;
+    top: calc(var(--size) / 6);
+    left: calc(var(--size) / 6);
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    background: var(--clr-400);
+}
+
+.references{
+    flex: 1;
+    align-content: end;
+}
+
+.reference__data{
+    /* flex-wrap: wrap; */
+    align-items: center;
+    gap: .5rem;
+    
+    padding-block-start: var(--m-500);
+}
+
+.reference__company{
+    font-size: var(--fs-300);
+    color: var(--clr-550);
+    padding-block-end: .5rem;
+}
