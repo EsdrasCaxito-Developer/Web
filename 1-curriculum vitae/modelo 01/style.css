@@ -71,9 +71,12 @@ main{
 
 .curriculum__left{
     background: var(--left_background);
-    padding-inline-start: var(--_boxOffset);
+    padding: var(--_boxOffset);
+    padding-inline-end: 0;
 
     display: grid;
+    align-content: start;
+    row-gap: 1.5rem;
 }
 /*
 .curriculum__left .curriculum__section:has(.curriculum__title){
